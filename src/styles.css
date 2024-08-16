@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* { 
+  --show-double-buttons: none; 
+  --scrollbar-border-thickness: 0px; 
+  --scrollbar-width: 10px; 
+  --scrollbar-height: 0px; 
+  --scrollbar-border-radius: 50px; 
+  --scrollbar-thumb-color: #564787; 
+  --scrollbar-track-color: #DBDBDB; 
+} 
+*::-webkit-scrollbar{ 
+  width: var(--scrollbar-width, 20px); 
+  height: var(--scrollbar-height, 20px); 
+}
+*::-webkit-scrollbar-thumb{ 
+  background: var(--scrollbar-thumb-color, #3B82F6); 
+  border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); 
+  border-radius: var(--scrollbar-border-radius, 4px); 
+}
+*::-webkit-scrollbar-track{ 
+  background: var(--scrollbar-track-color, #A1A1AA); 
+}*::-webkit-scrollbar-corner{ 
+  background: var(--scrollbar-corner-color, #FFFFFF); 
+  border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); 
+  border-radius: var(--scrollbar-border-radius, 4px); 
+}
+*::-webkit-scrollbar-button:vertical:start:increment, #preview::-webkit-scrollbar-button:vertical:end:decrement, #preview::-webkit-scrollbar-button:horizontal:start:increment, #preview::-webkit-scrollbar-button:horizontal:end:decrement { display: var(--show-double-buttons, none); }
+:root {
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: black;
+    background-color: #F0FAFC;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  html{
+    overflow-x: hidden;
+  }
+  .banner{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 5em;
+    align-items: center;
+    background: linear-gradient(164deg, rgba(86,71,135,1) 8%, rgba(138,123,167,1) 64%, rgba(219,203,216,1) 100%);
+    padding: 4em 0;
+    height: 100vh;
+    color: lightcyan;
+    h1{
+        text-align: center;
+    }
+  }
+  .card-form{
+    box-shadow: 0px 15px 50px rgb(209, 162, 252);
+    
+  }
+    .banner-form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(164deg, rgba(86,71,135,1) 8%, rgba(138,123,167,1) 64%, rgba(219,203,216,1) 100%);
+      padding: 2em 0;
+      height: 25vh;
+      color: white;
+      h1{
+          text-align: center;
+      }
+  }
+
+  .button-material{
+    position: fixed;
+    bottom: 2em;
+    right: 2.5em;
+    width: fit-content;
+    height: min-content;
+    z-index: 2;
+  }
+
+  .button-material:hover::after {
+    content: "Agregar Materias Prima"; /* Texto del aviso */
+    font-size: 0.9em;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 9px;
+    border-radius: 5px;
+    bottom: 100%;
+    left: 0;
+    bottom: 1.65em;
+    transform: translateX(-100%);
+    white-space: nowrap;
+  }
+  .form{
+    position: fixed;
+    top: 8em;
+    left: 20%;
+  }
+  .overlay{
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .form-x{
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .card-x{
+    position: absolute;
+    top: 0.2em;
+    right: 0.3em;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .link-button{
+    display: flex;
+    justify-content: center;
+  }
+
+  .render-cards{
+    width: 100%;
+    justify-content: center;
+    margin:2em 0;
+    gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    grid-auto-rows: minmax(200px,1fr);
+    grid-auto-flow: dense;
+  }
+
+  .card-container{
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+
+  .multi-dropdown{
+    position: absolute;
+  }
+  .materials-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    border: 1px solid#DBDBDB;
+    width: 60%;
+    height: auto;
+    margin-top: 2vh;
+    color: black;
+    padding: 1em;
+    font-size: 1.2em;
+    border-radius: 1em;
+    box-shadow: 0px 5px 15px rgba(221, 188, 250, 0.2);
+  }
+  .inputs{
+    background-color: #d5c9ff;
+    border: solid 2px white;
+  }
+  .bt-material-component{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:0.5rem;
+    background-color: #d1c6f8;
+    border: #564787 solid 3.5px;
+    box-shadow: 0px 5px 15px rgba(222, 189, 251, 0.2);
+    width: fit-content;
+    border-radius: 1.5em;
+    height: 1rem;
+    padding: 1em;
+    font-size: 1rem;
+  }
+  .x-formp{
+    width: 1rem;
+    cursor: pointer;
+  }
+  .tt{
+    text-align: center;
+  }
+  @media(max-width:800px){
+    .form{
+      position: fixed;
+      top: 2em;
+      left: 9%;
+      height: 90vh;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+  }
